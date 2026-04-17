@@ -39,4 +39,27 @@ public class ControladoraPersistencia {
             em.close();
         }
     }
+
+    public void borrarUsuario(int id_eliminar) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+
+            // Primero buscamos el objeto en la base de datos
+            Usuario usu = em.find(Usuario.class, id_eliminar);
+
+            // Si existe, lo borramos
+            if (usu != null) {
+                em.remove(usu);
+            }
+
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+        } finally {
+            em.close();
+        }
+    }
 }

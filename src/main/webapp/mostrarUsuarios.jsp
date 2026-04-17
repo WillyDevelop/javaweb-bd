@@ -13,6 +13,7 @@
                 for(Usuario usu : listaUsuarios){
         %>
                     <p><b>Usuario N° <%=cont%></b></p>
+                    <p>Id: <%=usu.getId()%></p>
                     <p>Dni: <%=usu.getDni()%></p>
                     <p>Nombre: <%=usu.getNombre()%></p>
                     <p>Apellido: <%=usu.getApellido()%></p>
