@@ -40,6 +40,7 @@ public class ControladoraPersistencia {
         }
     }
 
+    //Operacion delete
     public void borrarUsuario(int id_eliminar) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -63,6 +64,7 @@ public class ControladoraPersistencia {
         }
     }
 
+    //Operacion Bring
     public Usuario traerUsuario(int id_editar) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -72,6 +74,7 @@ public class ControladoraPersistencia {
         }
     }
 
+    //Operacion Edit
     public void editarUsuario(Usuario usu) {
         EntityManager em = emf.createEntityManager();
 
