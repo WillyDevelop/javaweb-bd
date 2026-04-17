@@ -26,7 +26,7 @@ public class SvEliminar extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id_eliminar = Integer.parseInt(request.getParameter("id_usuario"));
-        control.borarUsuario(id_eliminar);
+        control.borrarUsuario(id_eliminar);
 
     }
 

@@ -19,10 +19,17 @@
         </form>
 
         <h1>Eliminar Usuario</h1>
+        <p>Ingrese la id del usuario que quiere eliminar</p>
+        <form action="SvEliminar" method="POST">
+        <p><label>id: </label> <input type="text" name="id_usuario"></p>
+        <button type="submit" >Eliminar Usuarios</button>
+        </form>
+
+                <h1>Editar Usuario</h1>
                 <p>Ingrese la id del usuario que quiere eliminar</p>
-                <form action="SvEliminar" method="POST">
-                <p><label>id: </label> <input type="text" name="id_usuario"></p>
-                    <button type="submit" >Eliminar Usuarios</button>
+                <form action="SvEditar" method="GET">
+                <p><label>id: </label> <input type="text" name="id_usuarioEdit"></p>
+                <button type="submit" >Editar Usuarios</button>
                 </form>
 
     </body>

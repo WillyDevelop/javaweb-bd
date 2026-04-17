@@ -62,4 +62,35 @@ public class ControladoraPersistencia {
             em.close();
         }
     }
+
+    public Usuario traerUsuario(int id_editar) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.find(Usuario.class, id_editar);
+        } finally {
+            em.close();
+        }
+    }
+
+    public void editarUsuario(Usuario usu) {
+        EntityManager em = emf.createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            // El método merge busca el ID del objeto 'usu' en la BD.
+            // Si lo encuentra, actualiza los campos. Si no, lo crea.
+            em.merge(usu);
+
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            // Imprimir el error para debuggear
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
 }
